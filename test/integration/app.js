@@ -42,17 +42,17 @@ describe('Routes Books', () => {
 
   describe('Route POST /books', () => {
     it('should create a book', (done) => {
-      const newBook = {
+      const book = {
         id: 2,
-        name: 'newBook',
+        name: 'Book Created',
       };
 
       request
         .post('/books')
-        .send(newBook)
+        .send(book)
         .end((err, res) => {
-          expect(res.body.id).to.be.eql(newBook.id);
-          expect(res.body.name).to.be.eql(newBook.name);
+          expect(res.body.id).to.be.eql(book.id);
+          expect(res.body.name).to.be.eql(book.name);
 
           done(err);
         });

@@ -1,12 +1,12 @@
 const defaultResponse = (data, statusCode = 200) => ({
   data,
-  statusCode
-})
+  statusCode,
+});
 
 const errorResponse = (message, statusCode = 400) => defaultResponse({
   error: message,
-  statusCode
-})
+  statusCode,
+});
 
 class BooksController {
   constructor(Books) {
@@ -33,7 +33,7 @@ class BooksController {
 
   update(data, params) {
     return this.Books.update(data, {
-      where: params
+      where: params,
     })
       .then(result => defaultResponse(result))
       .catch(error => errorResponse(error.message, 422));
@@ -41,11 +41,11 @@ class BooksController {
 
   delete(params) {
     return this.Books.destroy({
-      where: params
+      where: params,
     })
       .then(result => defaultResponse(result, 204))
       .catch(error => errorResponse(error.message, 422));
   }
 }
 
-export default BooksController
+export default BooksController;
