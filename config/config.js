@@ -8,7 +8,7 @@ export default {
     operatorsAliases: false,
     freezeTableName: true,
     define: {
-      underscored: true
-    }
-  }
-}
+      underscored: true,
+    },
+  },
+};
