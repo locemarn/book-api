@@ -12,7 +12,7 @@ export default (app, Books) => {
         .then(result => res.json(result))
         .catch(() => res.status(412));
     });
-  
+
   app.route('/books/:id')
     .get((req, res) => {
       Books.findOne({ where: req.params })
@@ -29,4 +29,4 @@ export default (app, Books) => {
         .then(() => res.sendStatus(204))
         .catch(() => res.status(412));
     });
-}
+};

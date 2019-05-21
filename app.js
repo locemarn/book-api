@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import config from './config/config';
 import datasource from './config/datasource';
-import booksRouter from './Routes/books'
+import booksRouter from './routes/books';
 
 const app = express();
 
@@ -12,6 +12,6 @@ app.set('port', 7000);
 app.use(bodyParser.json());
 
 const { Books } = app.datasource.models;
-booksRouter(app, Books)
+booksRouter(app, Books);
 
 export default app;
