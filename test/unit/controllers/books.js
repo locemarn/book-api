@@ -76,7 +76,7 @@ describe('Controllers: Books', () => {
       return booksController.create(reqBody)
         .then((response) => {
           expect(response.data).to.be.eql(expectedResponse);
-          expect(response.statusCode).to.be.eql(201);
+          expect(response.statusCode).to.be.eql(200);
         });
     });
   });
